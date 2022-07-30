@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h1>Add Movie</h1>
+<div class="container">
+    <div class="form-group">
+        <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Name</label>
+        <input type="text" name="name" class="form-control"><br>
+        <label>Description</label>
+        <textarea cols="5" rows="3" name="desc" class="form-control"></textarea><br>
+        <label>Year</label>
+        <input type="text" name="year" class="form-control"><br>
+        <label>Image</label>
+        <input type="file" name="img" class="form-control"><br>
+        <button type="submit" class="btn btn-primary">ADD</button>
+            <a href="{% url 'index' %}" class="btn btn-primary">HOME</a>
+</form>
+    </div>
+</div>
+
+
+{% endblock %}
